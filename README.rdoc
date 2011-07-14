@@ -1,6 +1,11 @@
 = representation
 
-Description goes here.
+Create different, named representations of a resource for cleaner state representation.
+
+= Install
+
+    gem 'representation'
+    bundle
 
 == Contributing to representation
  
@@ -14,6 +19,5 @@ Description goes here.
 
 == Copyright
 
-Copyright (c) 2011 Chris Johnson. See LICENSE.txt for
-further details.
+Copyright (c) 2011 Chris Johnson, SocialVibe. See LICENSE.txt for further details.
 
