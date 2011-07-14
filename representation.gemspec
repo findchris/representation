@@ -13,8 +13,7 @@ Gem::Specification.new do |s|
   s.description = %q{Create different, named representations of a resource for cleaner state representation.}
   s.email = %q{findchris@gmail.com}
   s.extra_rdoc_files = [
-    "LICENSE.txt",
-    "README.rdoc"
+    "LICENSE.txt"
   ]
   s.files = [
     ".document",
@@ -22,7 +21,6 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
-    "README.rdoc",
     "Rakefile",
     "VERSION",
     "lib/representation.rb",
