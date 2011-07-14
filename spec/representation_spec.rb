@@ -87,9 +87,7 @@ describe "Representation" do
   end
   context "ActiveRecord" do
     it "should include the Representation module into ActiveRecord" do
-      class SomeModel < ActiveRecord::Base
-        
-      end
+      class SomeModel < ActiveRecord::Base; end
       SomeModel.should respond_to :representation
     end
   end
