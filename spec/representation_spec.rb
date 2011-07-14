@@ -66,5 +66,23 @@ describe "Representation" do
       public_user = user.representation(:public)
       public_user.inspect.should == '#<User name: "Tweedle Dum", calculated_age: 84>'
     end
+    it "should have the @attributes ivar set correctly" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      public_user = user.representation(:public)
+      public_user.instance_variable_get('@attributes').should == {'name' => 'Tweedle Dum', 'calculated_age' => 84}
+    end
+    it "should have have the #attributes method defined correctly" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      public_user = user.representation(:public)
+      public_user.attributes.should == {'name' => 'Tweedle Dum', 'calculated_age' => 84}
+    end
+    it "should have attr_accessors set for each attribute of the representation" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      public_user = user.representation(:public)
+      public_user.should respond_to(:name=)
+      public_user.name.should == 'Tweedle Dum'
+      public_user.should respond_to(:calculated_age=)
+      public_user.calculated_age.should == 84      
+    end
   end
 end
