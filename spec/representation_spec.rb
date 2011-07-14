@@ -91,6 +91,26 @@ describe "Representation" do
       public_user.attributes.should == {'name' => 'Tweedle Dum', 'calculated_age' => 84}
       internal_user.attributes.should == {'id' => 1, 'name' => 'Tweedle Dum', 'age' => 42, 'ssn' => '555-55-5555'}
     end
+    it "should respond to to_json" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      public_user = user.representation(:public)
+      public_user.should respond_to :to_json
+    end
+    it "should respond to to_xml" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      public_user = user.representation(:public)
+      public_user.should respond_to :to_xml
+    end
+    it "should respond to as_json" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      public_user = user.representation(:public)
+      public_user.should respond_to :as_json
+    end
+    it "should respond to serializable_hash" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      public_user = user.representation(:public)
+      public_user.should respond_to :serializable_hash
+    end
   end
   context "ActiveRecord" do
     it "should include the Representation module into ActiveRecord" do
