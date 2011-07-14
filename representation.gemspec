@@ -5,7 +5,7 @@
 
 Gem::Specification.new do |s|
   s.name = %q{representation}
-  s.version = "0.1.0"
+  s.version = "0.1.1"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chris Johnson"]
@@ -13,7 +13,8 @@ Gem::Specification.new do |s|
   s.description = %q{Create different, named representations of a resource for cleaner state representation.}
   s.email = %q{findchris@gmail.com}
   s.extra_rdoc_files = [
-    "LICENSE.txt"
+    "LICENSE.txt",
+    "README.md"
   ]
   s.files = [
     ".document",
@@ -21,11 +22,13 @@ Gem::Specification.new do |s|
     "Gemfile",
     "Gemfile.lock",
     "LICENSE.txt",
+    "README.md",
     "Rakefile",
     "VERSION",
     "lib/representation.rb",
     "lib/representation/active_record.rb",
     "rails/init.rb",
+    "representation.gemspec",
     "spec/representation_spec.rb",
     "spec/spec_helper.rb",
     "spec/support/connection.rb",
