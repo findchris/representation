@@ -8,6 +8,8 @@ Create different, named representations of a resource for cleaner state represen
 
 ## Usage
 
+```ruby
+
     class User < ActiveRecord::Base
       include Representation        
       representation :public,   :name, :calculated_age
@@ -23,7 +25,7 @@ Create different, named representations of a resource for cleaner state represen
     
     User.first.representation(:internal).inspect
     => #<User name: "Tweedle Dum", age: 42, ssn: "555-55-5555">
-    
+````
 
 ## Contributing to representation
  
