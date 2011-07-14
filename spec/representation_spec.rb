@@ -52,14 +52,19 @@ describe "Representation" do
       user.representation(:public).should be_an_instance_of(User)
     end
     it "should return an object with only the attributes identified by the representation definition" do
-      user = User.new
-      user.name = 'Tweedle Dum'
-      user.age  = 42
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
       public_user = user.representation(:public)
       
       public_user.name.should == 'Tweedle Dum'
       public_user.calculated_age.should == 84
       lambda { public_user.ssn }.should raise_error(NoMethodError)
+    end
+  end
+  context "when working with the representation object" do
+    it "should print an accurate #inspect string" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      public_user = user.representation(:public)
+      public_user.inspect.should == '#<User name: "Tweedle Dum", calculated_age: 84>'
     end
   end
 end
