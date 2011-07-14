@@ -111,6 +111,12 @@ describe "Representation" do
       public_user = user.representation(:public)
       public_user.should respond_to :serializable_hash
     end
+    it "should not modify the resource off of which the representation is based" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      public_user = user.representation(:public)
+      public_user.name = 'Tweedle Dee'
+      user.name.should == 'Tweedle Dum'
+    end
   end
   context "ActiveRecord" do
     it "should include the Representation module into ActiveRecord" do
