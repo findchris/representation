@@ -2,22 +2,22 @@ require File.expand_path(File.dirname(__FILE__) + '/spec_helper')
 require 'ruby-debug'
 
 describe "Representation" do
-  context "the module" do
+  context "the ActiveRecord module" do
     it "should be includable" do
       class Dummy
-        include Representation
+        include Representation::ActiveRecord
       end
     end
     it "should make available the representation class method" do
       class Dummy
-        include Representation        
+        include Representation::ActiveRecord       
         representation :ignored, :ignored
         attr_accessor :ignored
       end
     end
     it "should make available the representation instance method" do
       class Dummy
-        include Representation        
+        include Representation::ActiveRecord     
         representation :ignored, :ignored
         attr_accessor :ignored
       end
@@ -27,14 +27,14 @@ describe "Representation" do
   context ".representation" do
     it "should accept the name of the representation as the first argument" do
       class Dummy
-        include Representation        
+        include Representation::ActiveRecord        
         representation :public, :ignored
       end
       Dummy.representation_names.should include(:public)
     end
     it "should accept a list of attributes and method names that make up the named representation" do
       class Dummy
-        include Representation        
+        include Representation::ActiveRecord 
         representation :public, :name, :calculated_age
         
         attr_accessor :name, :age
@@ -83,6 +83,14 @@ describe "Representation" do
       public_user.name.should == 'Tweedle Dum'
       public_user.should respond_to(:calculated_age=)
       public_user.calculated_age.should == 84      
+    end
+  end
+  context "ActiveRecord" do
+    it "should include the Representation module into ActiveRecord" do
+      class SomeModel < ActiveRecord::Base
+        
+      end
+      SomeModel.should respond_to :representation
     end
   end
 end
