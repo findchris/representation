@@ -84,6 +84,13 @@ describe "Representation" do
       public_user.should respond_to(:calculated_age=)
       public_user.calculated_age.should == 84      
     end
+    it "should allow multiple representations" do
+      user = User.create!(:name => 'Tweedle Dum', :age => 42, :ssn => '555-55-5555')
+      public_user = user.representation(:public)
+      internal_user = user.representation(:internal)
+      public_user.attributes.should == {'name' => 'Tweedle Dum', 'calculated_age' => 84}
+      internal_user.attributes.should == {'id' => 1, 'name' => 'Tweedle Dum', 'age' => 42, 'ssn' => '555-55-5555'}
+    end
   end
   context "ActiveRecord" do
     it "should include the Representation module into ActiveRecord" do
