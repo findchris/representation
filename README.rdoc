@@ -18,7 +18,7 @@ Create different, named representations of a resource for cleaner state represen
         age * 2
       end
     end
-
+    
 		User.first.representation(:public).inspect
 		=> #<User name: "Tweedle Dum", calculated_age: 84>
 		
