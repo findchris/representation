@@ -18,12 +18,13 @@ Create different, named representations of a resource for cleaner state represen
         age * 2
       end
     end
-    
+     
 		User.first.representation(:public).inspect
 		=> #<User name: "Tweedle Dum", calculated_age: 84>
-		
+		 
 		User.first.representation(:internal).inspect
 		=> #<User name: "Tweedle Dum", age: 42, ssn: "555-55-5555">
+		
 
 
 == Contributing to representation
