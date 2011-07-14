@@ -18,7 +18,7 @@ Jeweler::Tasks.new do |gem|
   gem.homepage = "http://github.com/findchris/representation"
   gem.license = "MIT"
   gem.summary = %Q{Model logical groups of attributes as different object representations.}
-  gem.description = %Q{}
+  gem.description = %Q{Create different, named representations of a resource for cleaner state representation.}
   gem.email = "findchris@gmail.com"
   gem.authors = ["Chris Johnson"]
   # dependencies defined in Gemfile
