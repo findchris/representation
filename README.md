@@ -9,8 +9,7 @@ Create different, named representations of a resource for cleaner state represen
 ## Usage
 
 ```ruby
-class User < ActiveRecord::Base
-  include Representation        
+class User < ActiveRecord::Base 
   representation :public,   :name, :calculated_age
   representation :internal, :name, :ssn, :age
 
