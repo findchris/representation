@@ -1,6 +1,9 @@
 require 'active_record'
 
 module Representation
+  
+  class UnknownRepresentationError < StandardError; end
+  
   module ActiveRecord
     extend ActiveSupport::Concern
   
@@ -17,6 +20,7 @@ module Representation
         representations.keys
       end
       def values_for_representation(name)
+        raise UnknownRepresentationError, "Unknown Representation '#{name}'" unless representation_names.include?(name)
         representations[name]
       end
     end

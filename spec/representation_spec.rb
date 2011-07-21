@@ -117,6 +117,10 @@ describe "Representation" do
       public_user.name = 'Tweedle Dee'
       user.name.should == 'Tweedle Dum'
     end
+    it "should raise a Representation::UnknownRepresentationError when referencing an unknown representation" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      lambda { user.representation(:invalid) }.should raise_error Representation::UnknownRepresentationError
+    end
   end
   context "ActiveRecord" do
     it "should include the Representation module into ActiveRecord" do
