@@ -5,11 +5,11 @@
 
 Gem::Specification.new do |s|
   s.name = %q{representation}
-  s.version = "0.1.1"
+  s.version = "0.1.2"
 
   s.required_rubygems_version = Gem::Requirement.new(">= 0") if s.respond_to? :required_rubygems_version=
   s.authors = ["Chris Johnson"]
-  s.date = %q{2011-07-14}
+  s.date = %q{2011-07-21}
   s.description = %q{Create different, named representations of a resource for cleaner state representation.}
   s.email = %q{findchris@gmail.com}
   s.extra_rdoc_files = [
@@ -33,7 +33,6 @@ Gem::Specification.new do |s|
     "spec/spec_helper.rb",
     "spec/support/connection.rb",
     "spec/support/models.rb",
-    "spec/support/representation.sqlite3",
     "spec/support/schema.rb"
   ]
   s.homepage = %q{http://github.com/findchris/representation}
