@@ -1,5 +1,6 @@
 # representation
 Create different, named representations of a resource for cleaner state representation.
+See:  http://en.wikipedia.org/wiki/Representational_State_Transfer#Central_principle
 
 ## Install
 

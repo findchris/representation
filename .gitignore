@@ -46,3 +46,6 @@ pkg
 
 # For rubinius:
 #*.rbc
+
+# sqlite
+spec/support/*.sqlite3

@@ -121,6 +121,10 @@ describe "Representation" do
       user = User.new(:name => 'Tweedle Dum', :age => 42)
       lambda { user.representation(:invalid) }.should raise_error Representation::UnknownRepresentationError
     end
+    it "should allow #representation to be accessed via the #as alias" do
+      user = User.new(:name => 'Tweedle Dum', :age => 42)
+      user.as(:public).inspect.should == user.representation(:public).inspect # hacky equality test
+    end
   end
   context "ActiveRecord" do
     it "should include the Representation module into ActiveRecord" do

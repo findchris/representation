@@ -50,7 +50,8 @@ module Representation
           end
         end
       end
-    
+      
+      alias_method :as, :representation
     end
   end
 end
